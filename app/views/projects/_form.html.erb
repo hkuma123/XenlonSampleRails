@@ -1,0 +1,57 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_nm %><br />
+    <%= f.text_field :project_nm %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type %><br />
+    <%= f.text_field :project_type %>
+  </div>
+  <div class="field">
+    <%= f.label :project_class %><br />
+    <%= f.text_field :project_class %>
+  </div>
+  <div class="field">
+    <%= f.label :project_start_date %><br />
+    <%= f.date_select :project_start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :project_end_date %><br />
+    <%= f.date_select :project_end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br />
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pm %><br />
+    <%= f.text_field :pm %>
+  </div>
+  <div class="field">
+    <%= f.label :pl %><br />
+    <%= f.text_field :pl %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
